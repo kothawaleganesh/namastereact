@@ -2,8 +2,9 @@
   "name": "namastereact",
   "version": "1.0.0",
   "description": "This is the react starting project",
-
   "scripts": {
+    "start": "parcel index.html",
+    "build": "rm -rf .parcel-cache && parcel build",
     "test": "jest"
   },
   "repository": {
