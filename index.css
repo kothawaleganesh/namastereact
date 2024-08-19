@@ -87,8 +87,7 @@
   }
 }
 
-.Login
-{
+.Login {
   padding: 5 30px;
 }
 
@@ -96,3 +95,4 @@
   color: aliceblue;
   text-decoration: none; /* Optional: remove underline */
 }
+

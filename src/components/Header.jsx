@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import { USER_LOGO } from "../Data/AppConfig";
 import { Link } from "react-router-dom";
 import LOGO from "../../public/Images/Logo.png";
-
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
   const [btnText, setBtnText] = useState("Login");
   const toggleButtonText = () => {
-    setBtnText((prevText) => (prevText === "Login" ? "Logout" : "Login"));
+    if (setBtnText === "Login");
+    {
+      setBtnText("Logout");
+      navigate("/login");
+    }
+    if (setBtnText === "Logout") {
+      setBtnText("Login");
+      navigate("/login");
+    }
   };
 
   return (
