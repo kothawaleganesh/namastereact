@@ -1,20 +1,34 @@
 import React, { useState } from "react";
-import { LOGO_URL, USER_LOGO } from "../Data/AppConfig";
+import { USER_LOGO } from "../Data/AppConfig";
+import { Link } from "react-router-dom";
+import LOGO from "../../public/Images/Logo.png";
 
 const Header = () => {
   const [btnText, setBtnText] = useState("Login");
-
   const toggleButtonText = () => {
     setBtnText((prevText) => (prevText === "Login" ? "Logout" : "Login"));
   };
+
   return (
     <header className="header">
-      <img src={LOGO_URL} className="logo" alt="Logo" />
+      <img src={LOGO} className="logo" alt="Logo" />
       <div className="menu">
         <ul className="menu-list">
-          <li>Home</li>
-          <li>Settings</li>
-          <li>Cart</li>
+          <li>
+            <Link to="/" className="custom-link">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="custom-link">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="custom-link">
+              Contact
+            </Link>
+          </li>
         </ul>
       </div>
       <button id="Login" className="Login" onClick={toggleButtonText}>

@@ -91,3 +91,8 @@
 {
   padding: 5 30px;
 }
+
+.custom-link {
+  color: aliceblue;
+  text-decoration: none; /* Optional: remove underline */
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Restaurant = (data) => {
   return (
@@ -13,6 +14,7 @@ const Restaurant = (data) => {
         <p className="restaurant-description">{data.description}</p>
         <p className="restaurant-location">{data.location}</p>
         <p className="restaurant-rating">Rating: {data.rating}</p>
+        <Link to={"/restaurants/" + data.id}>View Menu</Link>
       </div>
     </div>
   );

@@ -18,7 +18,6 @@ const Body = () => {
   const fetchRestaurants = async () => {
     let res = await fetch(SWIGGY_API_URL);
     let result = await res.json();
-    console.log(result);
     setRestaurants(
       result?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
@@ -28,24 +27,9 @@ const Body = () => {
   if (restaurants.length === 0) {
     return (
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        <ShimmerDiv
-          mode="light"
-          className="restaurant-card"
-          height={300}
-          width={300}
-        />
-        <ShimmerDiv
-          mode="light"
-          className="restaurant-card"
-          height={300}
-          width={300}
-        />{" "}
-        <ShimmerDiv
-          mode="light"
-          className="restaurant-card"
-          height={300}
-          width={300}
-        />{" "}
+        <ShimmerDiv class="restaurant-card" />
+        <ShimmerDiv class="restaurant-card" />
+        <ShimmerDiv class="restaurant-card" />
       </div>
     );
   }
@@ -62,6 +46,7 @@ const Body = () => {
           return (
             <Restaurant
               key={info?.id}
+              id={info?.id}
               name={info?.name}
               rating={info?.avgRating}
               description={info?.cuisines.join(", ")}
